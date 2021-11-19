@@ -1,0 +1,108 @@
+/* ==========================================================================
+   Fonts
+   ========================================================================== */
+
+/* Original Instructions
+ * ================================================================== */
+
+// Import your fonts using the font-face mixin built for shopify assets
+// Make sure to set the font-weight / font-style correctly for each one that you include.
+// The second argument is the filename *excluding* the file extension.  This allows us to generate all the extensions inside the mixin.
+
+// @include font-face('Font Family', 'font-family-normal', $font-weight-normal);
+// @include font-face('Font Family', 'font-family-bold', $font-weight-bold);
+
+// Variable definition necessary due to import order in theme.scss
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+$font-weight-black: 900;
+
+// TODO - Temp font
+// NB! Must replace with purchased web fonts
+
+// Roboto- Black Italic (900)
+@font-face {
+  font-family: 'Roboto';
+  src: url("{{ 'Roboto-BlackItalic.ttf' | asset_url }}")
+    format('opentype');
+  font-weight: $font-weight-black;
+  font-style: italic;
+  font-stretch: normal;
+
+  // Ensure text remains visible during webfont load
+  font-display: swap;
+}
+
+// Roboto- Black (900)
+@font-face {
+  font-family: 'Roboto';
+  src: url("{{ 'Roboto-Black.ttf' | asset_url }}") format('opentype');
+  font-weight: $font-weight-black;
+  font-style: normal;
+  font-stretch: normal;
+
+  // Ensure text remains visible during webfont load
+  font-display: swap;
+}
+
+// Roboto- Bold Italic (700)
+@font-face {
+  font-family: 'Roboto';
+  src: url("{{ 'Roboto-BoldItalic.ttf' | asset_url }}") format('opentype');
+  font-weight: $font-weight-bold;
+  font-style: italic;
+  font-stretch: normal;
+
+  // Ensure text remains visible during webfont load
+  font-display: swap;
+}
+
+// Roboto- Bold (700)
+@font-face {
+  font-family: 'Roboto';
+  src: url("{{ 'Roboto-Bold.ttf' | asset_url }}") format('opentype');
+  font-weight: $font-weight-bold;
+  font-style: normal;
+  font-stretch: normal;
+
+  // Ensure text remains visible during webfont load
+  font-display: swap;
+}
+
+// Roboto- Medium Italic (500)
+@font-face {
+  font-family: 'Roboto';
+  src: url("{{ 'Roboto-MediumItalic.ttf' | asset_url }}")
+    format('opentype');
+  font-weight: $font-weight-medium;
+  font-style: italic;
+  font-stretch: normal;
+
+  // Ensure text remains visible during webfont load
+  font-display: swap;
+}
+
+// Roboto- Medium (500)
+@font-face {
+  font-family: 'Roboto';
+  src: url("{{ 'Roboto-Medium.ttf' | asset_url }}") format('opentype');
+  font-weight: $font-weight-medium;
+  font-style: normal;
+  font-stretch: normal;
+
+  // Ensure text remains visible during webfont load
+  font-display: swap;
+}
+
+// Roboto - Regular (400)
+@font-face {
+  font-family: 'Roboto';
+  src: url("{{ 'Roboto-Regular.ttf' | asset_url }}") format('opentype');
+  font-weight: $font-weight-normal;
+  font-style: normal;
+  font-stretch: normal;
+
+  // Ensure text remains visible during webfont load
+  font-display: swap;
+}
