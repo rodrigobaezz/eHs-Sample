@@ -1,6 +1,20 @@
 {% assign desktop_image = bp_background_image | img_url: '1440x' %}
 {% assign mobile_image = bp_background_image_mobile | img_url: '992x' %}
 
+{% capture banner_ctas %}
+  {% for i in (1..4) %}
+    {% assign cta_text = 'cta_text_' | append: i %}
+    {% assign cta_url = 'cta_url_' | append: i %}
+
+    {% assign index_cta_text = section.settings[cta_text]%}
+    {% assign index_cta_url = section.settings[cta_url]%}
+    
+    {% if index_cta_text != blank and index_cta_url != blank %}
+      <a class="btn btn-primary" href="{{ index_cta_url }}">{{ index_cta_text }}</a>
+    {% endif %}
+  {% endfor %}
+{% endcapture %}
+
 {% if bp_title and bp_background_image %}
   <div id="banner__panel-{{ bp_id }}" class="banner__panel" >
 
@@ -42,14 +56,11 @@
               <div class="banner-content__text">{{ bp_text }}</div>
             {% endif %}
 
-            {% if section.blocks.size  %}
+            {% if banner_ctas != blank %}
               <div class="banner-ctas-container">
-                {% for block in section.blocks %}
-                  <a class="btn btn-primary" href="{{ block.settings.cta_url }}">{{ block.settings.cta_text }}</a>
-                {% endfor %}
+                {{ banner_ctas }}
               </div>
             {% endif %}
-
           </div>
         </div>
       </div>
