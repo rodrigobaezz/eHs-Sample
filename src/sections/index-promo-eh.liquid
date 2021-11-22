@@ -1,0 +1,71 @@
+<div data-section-id="{{ section.id }}" data-section-type="promo">
+  <div class="promo">
+    {% include 'promo-panel-eh',
+            bp_id: section.id,
+            bp_eyebrow: section.settings.eyebrow,
+            bp_title: section.settings.title,
+            bp_text: section.settings.text,
+            bp_text_color: section.settings.text_color,
+            bp_background_image: section.settings.background_base,
+            bp_background_image_mobile: section.settings.background_mobile,
+            bp_cta_text: section.settings.cta_text,
+            bp_cta_url: section.settings.cta_url
+    %}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Promo - eHouse",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Content"
+      },
+      {
+        "type": "richtext",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text"
+      },
+      {
+        "type": "text",
+        "id": "cta_text",
+        "label": "CTA Text"
+      },
+      {
+        "type": "url",
+        "id": "cta_url",
+        "label": "CTA Link"
+      },
+      {
+        "type": "header",
+        "content": "Background - Desktop",
+        "info": "Main image will always be used. Mobile images will be displayed if they are set."
+      },
+      {
+        "type": "image_picker",
+        "id": "background_base",
+        "label": "Main Image"
+      },
+      {
+        "type": "header",
+        "content": "Background - Mobile"
+      },
+      {
+        "type": "image_picker",
+        "id": "background_mobile",
+        "label": "Main Image"
+      }
+    ],
+    "presets": [{
+      "name": "Promo - eHouse",
+      "category": "eHouse",
+      "settings": {}
+    }]
+  }
+{% endschema %}

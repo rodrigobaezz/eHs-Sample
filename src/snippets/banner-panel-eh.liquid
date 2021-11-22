@@ -1,0 +1,69 @@
+{% assign desktop_image = bp_background_image | img_url: '1440x' %}
+{% assign mobile_image = bp_background_image_mobile | img_url: '992x' %}
+
+{% capture banner_ctas %}
+  {% for i in (1..4) %}
+    {% assign cta_text = 'cta_text_' | append: i %}
+    {% assign cta_url = 'cta_url_' | append: i %}
+
+    {% assign index_cta_text = section.settings[cta_text]%}
+    {% assign index_cta_url = section.settings[cta_url]%}
+    
+    {% if index_cta_text != blank and index_cta_url != blank %}
+      <a class="btn btn-primary" href="{{ index_cta_url }}">{{ index_cta_text }}</a>
+    {% endif %}
+  {% endfor %}
+{% endcapture %}
+
+{% if bp_title and bp_background_image %}
+  <div id="banner__panel-{{ bp_id }}" class="banner__panel" >
+
+    <style type="text/css">
+      #banner__panel-{{ bp_id }} .banner__bg-image {
+        background-image: url({{ desktop_image  }});
+        background-position: center {{ bp_background_image_vertical_alignment }};
+      }
+
+      @media (max-width: 991px) {
+        #banner__panel-{{ bp_id }} .banner__bg-image {
+          {% if bp_background_image_mobile!= blank %}
+            background-image: url({{ mobile_image }});
+          {% else %}
+            background-image: url({{ desktop_image }});
+          {% endif %}
+          background-position: center {{ bp_background_image_mobile_vertical_alignment }};
+        }
+      }
+    </style>
+
+    <div class="banner__bg-container">
+      <div class="banner__bg-image" role="img" aria-label="{{ bp_background_image.alt }}"></div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+
+        <div class="banner__content-container col-lg-7 col-md-10 offset-md-1 col-lg-0">
+          <div class="banner-content banner-content--{{ bp_text_color }}">
+
+            {% if bp_eyebrow %}
+              <p class="banner-content__eyebrow">{{ bp_eyebrow }}</p>
+            {% endif %}
+            
+            <h1 class="banner-content__title">{{ bp_title }}</h1>
+
+            {% if bp_text %}
+              <div class="banner-content__text">{{ bp_text }}</div>
+            {% endif %}
+
+            {% if banner_ctas != blank %}
+              <div class="banner-ctas-container">
+                {{ banner_ctas }}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}

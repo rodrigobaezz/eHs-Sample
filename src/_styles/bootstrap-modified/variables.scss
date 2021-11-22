@@ -175,7 +175,7 @@ $sizes: map-merge(
 // Settings for the `<body>` element.
 
 $body-bg:                   $white !default;
-$body-color:                $gray-darker !default;
+$body-color:                #141414 !default;
 
 
 // Links
@@ -219,11 +219,11 @@ $grid-breakpoints: (
 // Define the maximum width of `.container` for different screen sizes.
 
 $container-max-widths: (
-  sm: 540px,
+  sm: 650px,
   md: 768px,
   lg: 992px,
-  xl: 1440px,
-  xxl: 1660px
+  xl: 1260px,
+  xxl: 1440px
 ) !default;
 
 @include _assert-ascending($container-max-widths, "$container-max-widths");

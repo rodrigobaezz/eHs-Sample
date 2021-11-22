@@ -1,0 +1,49 @@
+<div data-section-id="{{ section.id }}" data-section-type="header">
+  <div class="header">
+    <div class="container-fluid">
+      <div class="row align-items-lg-center justify-content-center">
+        <div class="col-lg-2 col-6">
+          <div class="header__logo-container">
+            <div class="header-logo" style="background-image: url({{ section.settings.logo | img_url: '300x' }})"></div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 d-lg-block d-none">
+          <div class="header__links">
+            {% for link in section.settings.menu.links %}
+              <a class="header-link" href="{{ link.url }}">{{ link.title }}</a>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class="col-lg-4 d-lg-block d-none">
+          <div class="header__user">
+          
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Header - eHouse",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Content"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo"
+      },
+      {
+        "type": "link_list",
+        "id": "menu",
+        "label": "Header Navigation"
+      }
+    ]
+  }
+{% endschema %}

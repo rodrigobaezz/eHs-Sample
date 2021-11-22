@@ -1,0 +1,16 @@
+.pencil-banner {
+  background-color: #005BC4;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 17px 0;
+  
+  h3 {
+    color: white;
+    font-size: 14px;
+    margin: 0;
+
+    @media (max-width: 991px) {
+      font-size: 11px;
+    }
+  }
+}

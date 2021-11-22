@@ -1,0 +1,38 @@
+.header {
+  display: block;
+  padding: 35px 0 45px;
+
+  @media (max-width: 991px) {
+    padding: 18px 0;
+  }
+
+  .header__logo-container {
+    position: relative;
+
+    &:before {
+      content: "";
+      display: block;
+      padding-top: 22%;
+    }
+  }
+
+  .header-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    max-width: 230px;
+  }
+
+  .header-link {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+    margin: 0 20px;
+  }
+}

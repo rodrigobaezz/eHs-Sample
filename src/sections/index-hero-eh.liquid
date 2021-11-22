@@ -1,0 +1,171 @@
+<div data-section-id="{{ section.id }}" data-section-type="banner">
+  <div class="banner banner--hero">
+    {% include 'banner-panel-eh',
+            bp_id: section.id,
+            bp_eyebrow: section.settings.eyebrow,
+            bp_title: section.settings.title,
+            bp_text: section.settings.text,
+            bp_text_color: section.settings.text_color,
+            bp_background_image: section.settings.background_base,
+            bp_background_image_vertical_alignment: section.settings.background_image_vertical_alignment,
+            bp_background_image_mobile: section.settings.background_mobile,
+            bp_background_image_mobile_vertical_alignment: section.settings.background_mobile_vertical_alignment,
+            section: section
+    %}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Hero Banner - eHouse",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Content"
+      },
+      {
+        "type": "text",
+        "id": "eyebrow",
+        "label": "Eyebrow"
+      },
+      {
+        "type": "richtext",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text"
+      },
+      {
+        "type": "header",
+        "content": "CTA - 1"
+      },
+      {
+        "type": "text",
+        "id": "cta_text_1",
+        "label": "CTA Text"
+      },
+      {
+        "type": "url",
+        "id": "cta_url_1",
+        "label": "CTA Link"
+      },
+      {
+        "type": "header",
+        "content": "CTA - 2"
+      },
+      {
+        "type": "text",
+        "id": "cta_text_2",
+        "label": "CTA Text"
+      },
+      {
+        "type": "url",
+        "id": "cta_url_2",
+        "label": "CTA Link"
+      },
+      {
+        "type": "header",
+        "content": "CTA - 3"
+      },
+      {
+        "type": "text",
+        "id": "cta_text_3",
+        "label": "CTA Text"
+      },
+      {
+        "type": "url",
+        "id": "cta_url_3",
+        "label": "CTA Link"
+      },
+      {
+        "type": "header",
+        "content": "CTA - 4"
+      },
+      {
+        "type": "text",
+        "id": "cta_text_4",
+        "label": "CTA Text"
+      },
+      {
+        "type": "url",
+        "id": "cta_url_4",
+        "label": "CTA Link"
+      },
+      {
+        "type": "header",
+        "content": "Design"
+      },
+      {
+        "type":      "select",
+        "id":        "text_color",
+        "label":     "Text Color",
+        "options": [
+          { "value": "black", "label": "Black" },
+          { "value": "white", "label": "White" }
+        ],
+        "default":   "black"
+      },
+      {
+        "type":      "select",
+        "id":        "text_alignment",
+        "label":     "Text Alignment",
+        "options": [
+          { "value": "left", "label": "Left" },
+          { "value": "center", "label": "Center" },
+          { "value": "right", "label": "Right" }
+        ],
+        "default":   "center"
+      },
+      {
+        "type": "header",
+        "content": "Background - Desktop",
+        "info": "Main image will always be used. Mobile images will be displayed if they are set."
+      },
+      {
+        "type": "select",
+        "id": "background_image_vertical_alignment",
+        "label": "Vertical Alignment",
+        "options": [
+          { "value": "center", "label": "Center" },
+          { "value": "top", "label": "Top" },
+          { "value": "bottom", "label": "Bottom" }
+        ],
+        "default": "center"
+      },
+      {
+        "type": "image_picker",
+        "id": "background_base",
+        "label": "Main Image"
+      },
+      {
+        "type": "header",
+        "content": "Background - Mobile"
+      },
+      {
+        "type": "select",
+        "id": "background_mobile_vertical_alignment",
+        "label": "Vertical Alignment",
+        "options": [
+          { "value": "center", "label": "Center" },
+          { "value": "top", "label": "Top" },
+          { "value": "bottom", "label": "Bottom" }
+        ],
+        "default": "center"
+      },
+      {
+        "type": "image_picker",
+        "id": "background_mobile",
+        "label": "Main Image"
+      }
+    ],
+    "presets": [{
+      "name": "Hero Banner - eHouse",
+      "category": "eHouse",
+      "settings": {}
+    }]
+  }
+{% endschema %}
+
