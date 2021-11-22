@@ -22,13 +22,14 @@
       }
     </style>
 
+    <div class="banner__bg-container">
+      <div class="banner__bg-image" role="img" aria-label="{{ bp_background_image.alt }}"></div>
+    </div>
+
     <div class="container">
       <div class="row">
-        <div class="banner__bg-container">
-          <div class="banner__bg-image" role="img" aria-label="{{ bp_background_image.alt }}"></div>
-        </div>
 
-        <div class="col-lg-7">
+        <div class="banner__content-container col-lg-7 col-md-10 offset-md-1 col-lg-0">
           <div class="banner-content banner-content--{{ bp_text_color }}">
 
             {% if bp_eyebrow %}

@@ -5,4 +5,9 @@
   letter-spacing: 2px;
   padding: 14px 20px;
   text-transform: uppercase;
+
+  @media (max-width: 991px) {
+    font-size: 12px;
+    padding: 12px 5px;
+  }
 }
