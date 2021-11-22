@@ -1,0 +1,64 @@
+<div data-section-id="{{ section.id }}" data-section-type="three-up-icons">
+  <div class="three-up-icons">
+
+    <div class="container">
+      <div class="row justify-content-md-center">
+        {% for block in section.blocks %}
+          {% assign title = block.settings.card_title %}
+          {% assign image = block.settings.card_image %}
+
+          {% if image != blank and title != blank %}
+            <div class="col-lg-4">
+              <div class="icon-card">
+                <div class="icon-card__image-container">
+                  <div class="banner__bg-image" 
+                    role="img" 
+                    aria-label="{{ bp_background_image.alt }}"
+                    style="background-image: url({{ image | img_url: '650x' }});"
+                  ></div>
+                </div>
+                
+                <h2 class="icon-card__title">{{ title }}</h2>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "3 Up Icons - eHouse",
+    "settings": [],
+    "max_blocks": 3,
+    "blocks" : [
+      {
+        "type": "icon",
+        "name": "Icon Card",
+        "settings": [
+          {
+            "type": "header",
+            "content": "Content"
+          },
+          {
+            "type": "text",
+            "id": "card_title",
+            "label": "Title"
+          },
+          {
+            "type": "image_picker",
+            "id": "card_image",
+            "label": "Card Image"
+          }
+        ]
+      }
+    ],
+    "presets": [{
+      "name": "3 Up Icons - eHouse",
+      "category": "eHouse",
+      "settings": {}
+    }]
+  }
+{% endschema %}

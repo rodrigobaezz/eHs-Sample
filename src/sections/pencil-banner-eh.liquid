@@ -1,0 +1,27 @@
+<div data-section-id="{{ section.id }}" data-section-type="pencil-banner">
+  <div class="pencil-banner">
+    <h3>{{ section.settings.content }}</h3>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Pencil Banner - eHouse",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Content"
+      },
+      {
+        "type": "textarea",
+        "id": "content",
+        "label": "Content"
+      }
+    ],
+    "presets": [{
+      "name": "Pencil Banner - eHouse",
+      "category": "eHouse",
+      "settings": {}
+    }]
+  }
+{% endschema %}

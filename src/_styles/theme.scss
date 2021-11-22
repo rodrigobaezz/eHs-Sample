@@ -3,7 +3,7 @@
  * ---------------------------------------
  *
  */
-@import 'bootstrap-modified/mixins/font-face'; // NOTE: Must be used before `core/fonts`.
+@import 'bootstrap-modified/mixins/font-face';
 @import 'core/fonts';
 @import 'core/variables';
 
@@ -51,6 +51,14 @@
  * COMPONENTS
  * ---------------------------------------
  */
-@import 'components/banner';
-@import 'components/promo';
 @import 'components/buttons';
+
+
+/**
+ * Sections
+ * ---------------------------------------
+ */
+@import 'sections/banner';
+@import 'sections/promo';
+@import 'sections/two-up';
+@import 'sections/three-up-icons';

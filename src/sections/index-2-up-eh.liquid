@@ -1,0 +1,80 @@
+<div data-section-id="{{ section.id }}" data-section-type="two-up-promo">
+  <div class="two-up-promo">
+
+    <div class="container">
+      <div class="row">
+        {% for block in section.blocks %}
+          {% assign title = block.settings.card_title %}
+          {% assign text = block.settings.card_text %}
+          {% assign cta = block.settings.card_cta %}
+          {% assign image = block.settings.card_image %}
+
+          {% if image != blank and title != blank %}
+            <div class="col-lg-6">
+              <div class="promo-card">
+                <div class="promo-card__image-container">
+                  <div class="banner__bg-image" 
+                    role="img" 
+                    aria-label="{{ bp_background_image.alt }}"
+                    style="background-image: url({{ image | img_url: '650x' }});"
+                  ></div>
+                </div>
+
+                <div class="promo-card__content-container">
+                  <h2 class="promo-card__title">{{ title }}</h2>
+                  <p class="promo-card__text">{{ text }}</p>
+                  <div class="promo-card__cta">{{ cta}}</div>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "2 Up Promo - eHouse",
+    "settings": [],
+    "max_blocks": 2,
+    "blocks" : [
+      {
+        "type": "promo_card",
+        "name": "Promo Card",
+        "settings": [
+          {
+            "type": "header",
+            "content": "Content"
+          },
+          {
+            "type": "text",
+            "id": "card_title",
+            "label": "Title"
+          },
+          {
+            "type": "textarea",
+            "id": "card_text",
+            "label": "Text"
+          },
+          {
+            "type": "richtext",
+            "id": "card_cta",
+            "label": "CTA"
+          },
+          {
+            "type": "image_picker",
+            "id": "card_image",
+            "label": "Card Image"
+          }
+        ]
+      }
+    ],
+    "presets": [{
+      "name": "2 Up Promo - eHouse",
+      "category": "eHouse",
+      "settings": {}
+    }]
+  }
+{% endschema %}
