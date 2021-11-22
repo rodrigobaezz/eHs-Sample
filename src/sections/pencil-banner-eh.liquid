@@ -1,7 +1,9 @@
 <div data-section-id="{{ section.id }}" data-section-type="pencil-banner">
-  <div class="pencil-banner">
-    <h3>{{ section.settings.content }}</h3>
-  </div>
+  <a href="{{ section.settings.link }}">
+    <div class="pencil-banner">
+      <h3>{{ section.settings.content }}</h3>
+    </div>
+  </a>
 </div>
 
 {% schema %}
@@ -16,12 +18,12 @@
         "type": "textarea",
         "id": "content",
         "label": "Content"
+      },
+      {
+        "type": "url",
+        "id": "link",
+        "label": "Banner Link"
       }
-    ],
-    "presets": [{
-      "name": "Pencil Banner - eHouse",
-      "category": "eHouse",
-      "settings": {}
-    }]
+    ]
   }
 {% endschema %}
