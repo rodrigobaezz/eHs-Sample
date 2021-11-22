@@ -1,0 +1,51 @@
+{% assign desktop_image = bp_background_image | img_url: '1440x' %}
+{% assign mobile_image = bp_background_image_mobile | img_url: '992x' %}
+
+{% if bp_title and bp_background_image %}
+  <div id="promo__panel-{{ bp_id }}" class="promo__panel" >
+
+    <style type="text/css">
+      #promo__panel-{{ bp_id }} .promo__bg-image {
+        background-image: url({{ desktop_image  }});
+        background-position: center {{ bp_background_image_vertical_alignment }};
+      }
+
+      @media (max-width: 991px) {
+        #promo__panel-{{ bp_id }} .promo__bg-image {
+          {% if bp_background_image_mobile!= blank %}
+            background-image: url({{ mobile_image }});
+          {% else %}
+            background-image: url({{ desktop_image }});
+          {% endif %}
+          background-position: center {{ bp_background_image_mobile_vertical_alignment }};
+        }
+      }
+    </style>
+
+    <div class="container">
+      <div class="row">
+        <div class="promo__bg-container col-lg-8">
+          <div class="promo__bg-image" role="img" aria-label="{{ bp_background_image.alt }}"></div>
+        </div>
+
+        <div class="col-lg-6 promo-content-outer-container">
+          <div class="promo-content promo-content--{{ bp_text_color }}">
+
+            {% if bp_eyebrow %}
+              <p class="promo-content__eyebrow">{{ bp_eyebrow }}</p>
+            {% endif %}
+            
+            <h1 class="promo-content__title">{{ bp_title }}</h1>
+
+            {% if bp_text %}
+              <div class="promo-content__text">{{ bp_text }}</div>
+            {% endif %}
+
+            <a class="btn btn-primary" href="{{ bp_cta_url }}">{{ bp_cta_text }}</a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
