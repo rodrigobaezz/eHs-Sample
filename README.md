@@ -2,7 +2,7 @@
 
 - Please run everything while using node v8.9.4 `nvm install 8.9.4`
 - In the project directory, install dependences with `npm install`
-- Setup your [shopify dev store](https://partners.shopify.com/489730/stores)
+- Setup your [shopify dev store](https://partners.shopify.com/)
 - [Generate API credentials](https://help.shopify.com/api/getting-started/api-credentials#get-credentials-through-the-shopify-admin) for your local environment
 - Create `config.yml`  in the project directory and add your store information and private app credentials:
   - **store:** the Shopify-specific URL for this store/environment (ie. my-store.myshopify.com)
